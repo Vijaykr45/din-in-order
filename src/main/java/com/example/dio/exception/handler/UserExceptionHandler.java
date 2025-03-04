@@ -10,14 +10,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
+
 public class UserExceptionHandler {
 
-    public ResponseEntity<SimpleErrorResponse>  getMessage(UserNotFoundByIdException ex ) {
+    public ResponseEntity<SimpleErrorResponse>  handleUserNotFoundById(UserNotFoundByIdException ex ) {
         return ResponseBuilder.error(HttpStatus.NOT_FOUND, ex.getMessage());
     }
 
 
-    public ResponseEntity<SimpleErrorResponse> getMessage(UserNotUpdatedByIdException excep) {
+    public ResponseEntity<SimpleErrorResponse> handleUserNotUpdatedById(UserNotUpdatedByIdException excep) {
         return ResponseBuilder.error(HttpStatus.NOT_MODIFIED, excep.getMessage());
     }
 }
