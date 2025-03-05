@@ -53,6 +53,8 @@ public class UserServiceImpl implements UserService {
 //    }
 
 
+
+
     private User createUserByRole (UserRole role){
         User user2;
         switch (role){
@@ -63,12 +65,29 @@ public class UserServiceImpl implements UserService {
         return user2;
     }
 
+    /**
+     * Produces and return child child instance of the user based on the user role
+     *
+     * @param  role the role of the user
+     * @return User the parent references containing either of Staff or Admin instance
+     *
+     * */
+
+
+
+
+
+
+
+
     @Override
     public UserResponse findUserById(Long userId) {
         return userRepository.findById(userId)
                 .map(userMapper::mapToUserResponse)
                 .orElseThrow(() -> new UserNotFoundByIdException("Failed to find user , User not found by Id"));
     }
+
+
 
     @Override
     public UserResponse updateUserById(UserRequest userRequest, long userId) {
