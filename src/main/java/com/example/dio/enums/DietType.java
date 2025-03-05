@@ -1,5 +1,6 @@
 package com.example.dio.enums;
 
-public class DietType {
+public enum DietType {
 
+    VEG , NONVEG
 }

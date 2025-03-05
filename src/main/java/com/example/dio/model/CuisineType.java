@@ -3,12 +3,14 @@ package com.example.dio.model;
 import jakarta.persistence.*;
 import org.mapstruct.MapMapping;
 
+import java.util.List;
+
 @Entity
 @Table(name =  "cuisine")
 public class CuisineType{
 
     @Id
-    private String cuisineType ;
+    private List<Restaurant> cuisineType ;
 
     @ManyToMany (mappedBy =  "cuisinename")
     private  Restaurant restaurant ;
