@@ -40,7 +40,7 @@ public class Restaurant {
     private LocalDateTime closeAt ;
 
     @Column(name = "dietType")
-    private DietType dietType;
+    private List<DietType> dietType;
 
     @Column(name = "createdAt")
     private LocalTime createdAt ;

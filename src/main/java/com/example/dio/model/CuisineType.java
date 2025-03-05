@@ -12,7 +12,7 @@ public class CuisineType{
     @Id
     private List<Restaurant> cuisineType ;
 
-    @ManyToMany (mappedBy =  "cuisinename")
+    @ManyToMany (mappedBy =  "cuisineName")
     private  Restaurant restaurant ;
 
 
