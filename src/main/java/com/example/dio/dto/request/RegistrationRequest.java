@@ -21,15 +21,14 @@ public class RegistrationRequest {
 
     @NotBlank(message =  "User email cannot be blank ")
     @NotNull(message =  "User email cannot be null ")
-    @Email(regexp = "^[a-zA-Z0-9._%+-]+@gmail.com", message = "Email must be a valid Gmail address")
+    @Pattern(regexp =  "^[a-zA-Z0-9._%+-]+@gmail.com", message = "Email must be a valid Gmail address")
     private String email;
-
 
 
     @NotNull(message = "password cannot be null")
     @NotBlank(message = "password cannot be blank")
-    @Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z].*[a-z])(?=.*\\d)(?=.*[@$!%*?&]).{8,}$",
-            message = "Password must be at least 8 characters long, contain at least one uppercase letter, at least two lowercase letters, at least one digit, and at least one special character (@$!%*?&)"
+    @Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&]).{8,}$",
+            message = "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one digit, and at least one special character (@$!%*?&)"
     )
     private String password;
 

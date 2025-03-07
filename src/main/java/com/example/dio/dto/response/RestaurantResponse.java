@@ -1,18 +1,15 @@
 package com.example.dio.dto.response;
 
 import com.example.dio.enums.DietType;
-import com.example.dio.model.Admin;
-import com.example.dio.model.CuisineType;
-import com.example.dio.model.Restaurant;
-import jakarta.persistence.Column;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
+@Setter
+@Getter
 public class RestaurantResponse {
 
 
@@ -30,13 +27,13 @@ public class RestaurantResponse {
 
     private LocalDateTime closeAt ;
 
-    private List<DietType> dietType;
+    private List<DietType> dietTypes;
 
     private LocalTime createdAt ;
 
     private LocalTime lastModifiedAt ;
 
 
-    private List<CuisineType> cusintype ;
+    private List<String> cusintypes ;
 
 }

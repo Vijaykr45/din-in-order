@@ -2,10 +2,13 @@ package com.example.dio.dto.request;
 
 import com.example.dio.enums.DietType;
 import jakarta.validation.constraints.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+@Setter
+@Getter
 public class RestaurantRequest {
 
     @NotBlank(message = "Restaurant name cannot be blank")
@@ -35,9 +38,9 @@ public class RestaurantRequest {
 
 
     @NotEmpty(message = "At least one diet type must be provided")
-    private List<DietType> dietType;
+    private List<DietType> dietTypes;
 
 
     @NotEmpty(message = "At least one cuisine type must be provided")
-    private List<String> cuisineType;
+    private List<String> cuisineTypes;
 }

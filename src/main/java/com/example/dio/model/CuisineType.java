@@ -1,19 +1,24 @@
 package com.example.dio.model;
 
 import jakarta.persistence.*;
-import org.mapstruct.MapMapping;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
+
 @Entity
+@Setter
+@Getter
 @Table(name =  "cuisine")
 public class CuisineType{
 
     @Id
-    private List<Restaurant> cuisineType ;
+    @Column(name = "cuisinename")
+    private String  cuisineName ;
 
-    @ManyToMany (mappedBy =  "cuisineName")
-    private  Restaurant restaurant ;
+    @ManyToMany
+    private List<Restaurant> restaurants ;
 
 
 
