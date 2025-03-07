@@ -4,6 +4,7 @@ import com.example.dio.enums.DietType;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
@@ -14,26 +15,15 @@ public class RestaurantResponse {
 
 
     private Long restaurantId;
-
-    private  String name ;
-
+    private String name;
     private String address;
-
-    private Long contactNumber ;
-
-    private String email ;
-
-    private LocalDateTime openAt ;
-
-    private LocalDateTime closeAt ;
-
+    private String contactNumber;
+    private String contactEmail;
+    private LocalDateTime opensAt;
+    private LocalDateTime closeAt;
     private List<DietType> dietTypes;
-
-    private LocalTime createdAt ;
-
-    private LocalTime lastModifiedAt ;
-
-
-    private List<String> cusintypes ;
+    private LocalDateTime lastModifiedAt;
+    private LocalDateTime createdAt;
+    private List<String> cuisineTypes;
 
 }

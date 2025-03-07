@@ -1,11 +1,14 @@
 package com.example.dio.exception;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
-@Getter
-@AllArgsConstructor
 public class UserNotUpdatedByIdException extends RuntimeException{
 
-    private final String message ;
+    private String message;
+
+    public UserNotUpdatedByIdException(String message) {
+        this.message = message;
+    }
+    public String getMessage(){
+        return this.message;
+    }
+
 }

@@ -12,44 +12,61 @@ import java.util.List;
 public interface RestaurantMapper {
 
     /**
-     * Converts a {@link RestaurantResponse} DTO to a {@link Restaurant} entity.
      *
-     * @param restaurantResponse the response DTO containing restaurant details
-     * @return the mapped {@link Restaurant} entity
+     * used for set restaurantRequest (DTO class to update) data in user object
+     *
+     * @param restaurantRequest DTO class with updated restaurant details
+     * @return restaurent object with RestaurantRequest data
      */
     RestaurantResponse mapToRestaurantEntity(RestaurantResponse restaurantResponse);
 
-
     /**
-     * Converts a {@link RestaurantRequest} DTO to a {@link Restaurant} entity.
+     * getting string value and storing in CuisineType object
      *
-     * @param restaurantRequest the request DTO containing restaurant details
-     * @return the mapped {@link Restaurant} entity
+     * @param value cuisine type getting in string type
+     * @return object of cuisine with string name
      */
     Restaurant mapToRestaurantEntity(RestaurantRequest restaurantRequest);
 
 
-
-    default  String map(CuisineType cuisineType) {
-        if(cuisineType!= null) {
-            return cuisineType.getCuisineName();
+    default CuisineType mapToCuisineType(String value) {
+        if(value == null) {
+            return null;
         }
         else {
-            return  null ;
+            CuisineType type = new CuisineType();
+            type.setCuisine(value);
+            return type;
         }
     }
 
+    /**
+     * converting cuisine type into String for restaurant response
+     *
+     * @param value cuisineType object with name
+     * @return cuisine name as string
+     */
 
-
-    default  CuisineType map (String value){
+    default String mapToString(CuisineType value) {
         if(value == null) {
-            CuisineType cuisineType = new CuisineType();
-            cuisineType.setCuisineName(value);
-            return  cuisineType ;
+            return null;
         }
-        else
-         return null ;
+        else return value.getCuisine();
     }
+
+    /**
+     * create and return structure of restaurentResponse using user object details
+     *
+     * @param restaurent user entity object
+     * @return restaurentResponse object to send restricted attribute
+     */
+
+    RestaurantResponse mapToRestaurantResponce(Restaurant restaurant);
+
+
+
+
+
 
 
 }

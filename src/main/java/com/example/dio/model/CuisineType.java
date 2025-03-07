@@ -6,19 +6,19 @@ import lombok.Setter;
 
 import java.util.List;
 
-
-@Entity
-@Setter
 @Getter
-@Table(name =  "cuisine")
-public class CuisineType{
+@Setter
+@Entity
+@Table(name = "CuisineType")
+public class CuisineType {
 
     @Id
-    @Column(name = "cuisinename")
-    private String  cuisineName ;
+    @Column(name = "cuisine")
+    private String cuisine;
 
-    @ManyToMany
-    private List<Restaurant> restaurants ;
+    @ManyToMany(mappedBy = "cuisineTypes")
+    private List<Restaurant> restaurant;
+
 
 
 
