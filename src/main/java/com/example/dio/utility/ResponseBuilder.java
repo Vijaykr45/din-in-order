@@ -169,8 +169,8 @@ public class ResponseBuilder {
      * @param errors     A list of validation errors for specific fields.
      * @return          A ResponseEntity containing the structured validation error response.
      */
-    public static ResponseEntity<ValidationErrorStructure> validationError(HttpStatus httpStatus, String message, List<ValidationErrorStructure.Errors> errors) {
-        ValidationErrorStructure errorStructure = ValidationErrorStructure.builder()
+    public static ResponseEntity<FieldErrorResponse> validationError(HttpStatus httpStatus, String message, List<FieldErrorResponse.CustomFieldError> errors) {
+        FieldErrorResponse errorStructure = FieldErrorResponse.builder()
                 .status(httpStatus.value())  // Setting HTTP status code
                 .message(message)          // Attaching error message
                 .type(httpStatus.name())   // Setting error type (e.g., BAD_REQUEST)

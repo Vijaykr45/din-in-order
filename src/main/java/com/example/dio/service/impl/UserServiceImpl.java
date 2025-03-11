@@ -4,7 +4,7 @@ import com.example.dio.dto.request.RegistrationRequest;
 import com.example.dio.dto.request.UserRequest;
 import com.example.dio.dto.response.UserResponse;
 import com.example.dio.enums.UserRole;
-import com.example.dio.exception.UserNotFoundByIdException;
+import com.example.dio.exception.UserNotFoundException;
 import com.example.dio.mapper.UserMapper;
 import com.example.dio.model.Admin;
 import com.example.dio.model.Staff;
@@ -78,13 +78,11 @@ public class UserServiceImpl implements UserService {
 
 
 
-
-
     @Override
     public UserResponse findUserById(Long userId) {
         return userRepository.findById(userId)
                 .map(userMapper::mapToUserResponse)
-                .orElseThrow(() -> new UserNotFoundByIdException("Failed to find user , User not found by Id"));
+                .orElseThrow(() -> new UserNotFoundException("Failed to find user , User not found by Id"));
     }
 
 
@@ -97,7 +95,7 @@ public class UserServiceImpl implements UserService {
                     userRepository.save(exUser);
                     return userMapper.mapToUserResponse(exUser);
                 })
-                .orElseThrow(() -> new UserNotFoundByIdException("Failed to update user, user not found by ID"));
+                .orElseThrow(() -> new UserNotFoundException("Failed to update user, user not found by ID"));
     }
 
 

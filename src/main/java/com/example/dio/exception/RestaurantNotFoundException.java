@@ -1,10 +1,10 @@
 package com.example.dio.exception;
 
-public class UserNotUpdatedByIdException extends RuntimeException{
+public class RestaurantNotFoundException extends  RuntimeException {
 
     private String message;
 
-    public UserNotUpdatedByIdException(String message) {
+    public RestaurantNotFoundException(String message) {
         this.message = message;
     }
     public String getMessage(){

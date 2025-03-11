@@ -2,7 +2,7 @@ package com.example.dio.service.impl;
 
 import com.example.dio.dto.request.RestaurantRequest;
 import com.example.dio.dto.response.RestaurantResponse;
-import com.example.dio.exception.UserNotFoundByIdException;
+import com.example.dio.exception.UserNotFoundException;
 import com.example.dio.mapper.RestaurantMapper;
 import com.example.dio.model.Admin;
 import com.example.dio.model.CuisineType;
@@ -23,13 +23,13 @@ import java.util.List;
 public class RestaurantServiceImpl implements RestaurantService {
     private UserRepository userRepository;
     private RestaurantRepository restaurantRepository;
-    private final CuisineRepository cuisineRepository;
+    private  CuisineRepository cuisineRepository;
     private RestaurantMapper restaurantMapper;
 
 
     @Override
     public RestaurantResponse createRestaurant(long userId, RestaurantRequest restaurantRequest){
-        User user =userRepository.findById(userId).orElseThrow(() -> new UserNotFoundByIdException("User Not Found , Invaild User Id"));
+        User user =userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException("User Not Found , Invaild User Id"));
         if(user instanceof Admin admin){
             Restaurant restaurant = restaurantMapper.mapToRestaurantEntity(restaurantRequest);
 

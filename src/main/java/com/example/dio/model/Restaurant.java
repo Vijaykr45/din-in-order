@@ -1,11 +1,10 @@
 package com.example.dio.model;
-
 import com.example.dio.enums.DietType;
 import jakarta.persistence.*;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -54,5 +53,10 @@ public class Restaurant {
 
         @ManyToMany(fetch = FetchType.EAGER)
         private List<CuisineType> cuisineTypes;
+
+        @OneToMany(mappedBy = "restaurant")
+        private  List<FoodItem> foodItems ;
+
+
     }
 

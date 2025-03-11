@@ -1,6 +1,7 @@
 package com.example.dio.model;
 
 import jakarta.persistence.*;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +19,9 @@ public class CuisineType {
 
     @ManyToMany(mappedBy = "cuisineTypes")
     private List<Restaurant> restaurant;
+
+    @OneToMany(mappedBy = "cuisineType")
+    private List<FoodItem> foodItems;
 
 
 
