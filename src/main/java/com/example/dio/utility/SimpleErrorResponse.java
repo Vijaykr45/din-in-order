@@ -4,11 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.experimental.SuperBuilder;
-
-@Getter
-@AllArgsConstructor
-
 @SuperBuilder
+@Getter
 public class SimpleErrorResponse {
     private String type ;
     private int status ;  // 404

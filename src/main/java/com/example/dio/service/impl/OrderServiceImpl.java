@@ -1,0 +1,62 @@
+package com.example.dio.service.impl;
+
+import com.example.dio.dto.response.OrderResponse;
+import com.example.dio.enums.OrderStatus;
+import com.example.dio.enums.TableStatus;
+import com.example.dio.mapper.OrderMapper;
+import com.example.dio.model.CartItem;
+import com.example.dio.model.Order;
+import com.example.dio.model.RestaurantTable;
+import com.example.dio.repository.CartItemRepository;
+import com.example.dio.repository.OrderRepository;
+import com.example.dio.repository.RestaurantTableRepository;
+import com.example.dio.service.OrderService;
+import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.NoSuchElementException;
+
+@Service
+@AllArgsConstructor
+public class OrderServiceImpl implements OrderService {
+
+    private final OrderRepository orderRepository;
+    private final RestaurantTableRepository restaurantTableRepository;
+    private final CartItemRepository cartItemRepository;
+    private final OrderMapper orderMapper;
+
+    @Override
+    @Transactional
+    public OrderResponse createOrder(long tableId) {
+        RestaurantTable restaurantTable = restaurantTableRepository.findById(tableId)
+                .orElseThrow(() -> new NoSuchElementException("Table not found !!"));
+
+        List<CartItem> cartItemList = cartItemRepository.findByRestaurantTable(restaurantTable);
+
+        Order order = null ;
+
+        if(!cartItemList.isEmpty()){
+            order = new Order();
+            order.setOrderStatus(OrderStatus.CONFIRMED);
+            order.setCartItems(cartItemList);
+            order.setRestaurantTable(restaurantTable);
+            order.setTotalAmount(cartItemList.stream()
+                    .mapToDouble(CartItem::getTotalPrice)
+                    .sum());
+            orderRepository.save(order);
+        }
+        else{
+            throw new NoSuchElementException(" No CartItem Selected !! ");
+        }
+
+        restaurantTable.setStatus(TableStatus.OCCUPIED);
+        restaurantTableRepository.save(restaurantTable);
+
+        cartItemList.forEach(item -> item.setOrder(true));
+        cartItemRepository.saveAll(cartItemList);
+
+        return orderMapper.mapToOrderResponse(order);
+    }
+}

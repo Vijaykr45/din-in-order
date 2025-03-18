@@ -1,5 +1,9 @@
 package com.example.dio.dto.request;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,8 +11,16 @@ import lombok.Setter;
 @Setter
 public class UserRequest {
 
-    private String userName ;
-    private String email;
-    private  String phNo;
+    @NotEmpty(message = "Username can not be null or blank !! ")
+    @NotBlank(message = "Username can not be blank !!")
+    @Pattern(regexp = "^[a-zA-Z0-9_]+$" , message = "User can only contain Alphabets , Number and UnderScore")
+    private String username;
 
+    @NotEmpty(message = "Email can not be null or blank !!")
+    @NotBlank(message = "Username can not be blank !!")
+    @Email(regexp = "^[a-zA-Z0-9._%+-]+@gmail.com", message = "Email must be a valid Gmail address")
+    private String email;
+
+    @Pattern(regexp = "^[7-9]\\d{9}$", message = "Invalid Phone Number")
+    private String phno;
 }

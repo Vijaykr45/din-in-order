@@ -11,6 +11,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import java.util.List;
 
+
 @RestControllerAdvice
 public class FieldErrorExceptionHandler extends ResponseEntityExceptionHandler {
 
@@ -35,11 +36,7 @@ public class FieldErrorExceptionHandler extends ResponseEntityExceptionHandler {
                 .map(error -> (FieldError) error)
                 .map(this::createFieldError)
                 .toList();
-
         FieldErrorResponse fieldErrorResponse = createFieldErrorResponse(status, errors);
-
-
-
         return ResponseEntity.status(status)
                 .body(fieldErrorResponse);
     }

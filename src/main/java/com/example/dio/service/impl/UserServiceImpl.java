@@ -4,7 +4,7 @@ import com.example.dio.dto.request.RegistrationRequest;
 import com.example.dio.dto.request.UserRequest;
 import com.example.dio.dto.response.UserResponse;
 import com.example.dio.enums.UserRole;
-import com.example.dio.exception.UserNotFoundByIdException;
+import com.example.dio.exception.UserNotFoundException;
 import com.example.dio.mapper.UserMapper;
 import com.example.dio.model.Admin;
 import com.example.dio.model.Staff;
@@ -53,6 +53,8 @@ public class UserServiceImpl implements UserService {
 //    }
 
 
+
+
     private User createUserByRole (UserRole role){
         User user2;
         switch (role){
@@ -63,12 +65,27 @@ public class UserServiceImpl implements UserService {
         return user2;
     }
 
+    /**
+     * Produces and return child child instance of the user based on the user role
+     *
+     * @param  role the role of the user
+     * @return User the parent references containing either of Staff or Admin instance
+     *
+     * */
+
+
+
+
+
+
     @Override
     public UserResponse findUserById(Long userId) {
         return userRepository.findById(userId)
                 .map(userMapper::mapToUserResponse)
-                .orElseThrow(() -> new UserNotFoundByIdException("Failed to find user , User not found by Id"));
+                .orElseThrow(() -> new UserNotFoundException("Failed to find user , User not found by Id"));
     }
+
+
 
     @Override
     public UserResponse updateUserById(UserRequest userRequest, long userId) {
@@ -78,7 +95,7 @@ public class UserServiceImpl implements UserService {
                     userRepository.save(exUser);
                     return userMapper.mapToUserResponse(exUser);
                 })
-                .orElseThrow(() -> new UserNotFoundByIdException("Failed to update user, user not found by ID"));
+                .orElseThrow(() -> new UserNotFoundException("Failed to update user, user not found by ID"));
     }
 
 
