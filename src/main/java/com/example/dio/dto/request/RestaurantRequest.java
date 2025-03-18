@@ -4,43 +4,35 @@ import com.example.dio.enums.DietType;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 @Setter
 @Getter
 public class RestaurantRequest {
 
-    @NotBlank(message = "Restaurant name cannot be blank")
-    @Pattern(regexp = "^[a-zA-Z0-9_]+$", message = "Restaurant name can only contain alphabets, numbers, and underscores")
+
+    @NotNull(message = "Restaurant can not be null !!")
+    @NotBlank(message = "Restaurant can not be blank !!")
+    @Pattern(regexp = "^[a-zA-Z0-9_]+$" , message = "User can only contain Alphabets , Number and UnderScore")
     private String name;
 
-    @NotBlank(message = "Address cannot be blank")
+    @NotNull(message = "Restaurant can not be null !!")
+    @NotBlank(message = "Restaurant can not be blank !!")
     private String address;
 
-
-    @NotNull(message = "Phone number cannot be null")
-    @Pattern(regexp = "^[7-9]\\d{9}$", message = "Phone number must be a valid 10-digit number starting with 7, 8, or 9")
+    @Pattern(regexp = "^[7-9]\\d{9}$", message = "Invalid Phone Number")
     private String contactNumber;
 
+    @Email(regexp = "^[a-zA-Z0-9._%+-]+@gmail.com", message = "Email must be a valid Gmail address")
+    private String contactEmail;
 
-    @NotBlank(message = "Email cannot be blank")
-    @Email(regexp = "^[a-zA-Z0-9._%+-]+@gmail\\.com$", message = "Email must be a valid Gmail address")
-    private String email;
+    @NotNull(message = "Restaurant can not be null !!")
+    private LocalTime opensAt;
 
+    @NotNull(message = "Restaurant can not be null !!")
 
-    @NotNull(message = "Opening time cannot be null")
-    private LocalDateTime openAt;
+    private LocalTime closeAt;
 
-
-    @NotNull(message = "Closing time cannot be null")
-    private LocalDateTime closeAt;
-
-
-    @NotEmpty(message = "At least one diet type must be provided")
     private List<DietType> dietTypes;
-
-
-    @NotEmpty(message = "At least one cuisine type must be provided")
     private List<String> cuisineTypes;
 }

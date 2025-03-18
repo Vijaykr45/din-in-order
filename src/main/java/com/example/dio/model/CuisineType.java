@@ -6,10 +6,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
-
+@Entity
 @Getter
 @Setter
-@Entity
 @Table(name = "CuisineType")
 public class CuisineType {
 

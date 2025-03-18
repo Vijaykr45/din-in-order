@@ -33,4 +33,11 @@ public class RestaurantTable{
     @ManyToMany(mappedBy = "restaurantTables")
     private List<Staff> staffs;
 
+
+    @OneToMany(mappedBy = "restaurantTable")
+    private List<CartItem> cartItems;
+
+    @OneToMany
+    private List<Order> order;
+
 }

@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -12,6 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 @Table(name = "restaurant")
+@EntityListeners(AuditingEntityListener.class)
 public class Restaurant {
 
 
@@ -42,9 +46,11 @@ public class Restaurant {
         @Column(name = "diet_type")
         private List<DietType> dietTypes;
 
+        @CreatedDate
         @Column(name = "created_at")
         private LocalDateTime createdAt;
 
+        @LastModifiedDate
         @Column(name = "last_modified_at")
         private LocalDateTime lastModifiedAt;
 
@@ -55,7 +61,13 @@ public class Restaurant {
         private List<CuisineType> cuisineTypes;
 
         @OneToMany(mappedBy = "restaurant")
+        private List<RestaurantTable> restaurantTables;
+
+        @OneToMany(mappedBy = "restaurant")
         private  List<FoodItem> foodItems ;
+
+        @OneToMany(mappedBy = "restaurant")
+        private List<Staff> staffs;
 
 
     }

@@ -24,7 +24,4 @@ public class FoodItemResponse {
     private LocalDateTime lastModifiedAt;
 
 
-
-
-
 }

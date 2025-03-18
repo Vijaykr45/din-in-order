@@ -6,8 +6,12 @@ import jakarta.persistence.*;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -16,11 +20,9 @@ public class FoodItem {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "itemId")
     private Long itemId ;
-
-
 
     @Column(name = "name" )
     private String name ;
@@ -38,12 +40,15 @@ public class FoodItem {
     private Stock availability ;
 
     @Column(name = "dietType")
+    @Enumerated
     private DietType dietType ;
 
     @Column(name =  "createdAt")
+    @CreatedDate
     private LocalDateTime createdAt ;
 
     @Column(name = "lastModifiedAt")
+    @LastModifiedDate
     private LocalDateTime lastModifiedAt ;
 
 
@@ -52,5 +57,12 @@ public class FoodItem {
 
     @ManyToOne
     private  CuisineType cuisineType ;
+
+    @ManyToMany
+    private List<Category> categories;
+
+
+    @OneToMany(mappedBy = "foodItem")
+    private List<CartItem> cartItems;
 
 }
