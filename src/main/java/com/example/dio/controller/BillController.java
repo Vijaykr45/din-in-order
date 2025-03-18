@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("${app.base-url}")
 @AllArgsConstructor
 public class BillController {
-
-    private final BillService billService ;
+    private final BillService billService;
 
     @PostMapping("/bills/tables/{tableId}")
     public ResponseEntity<ResponseStructure<BillResponse>> createBill(@PathVariable long tableId){
@@ -24,13 +23,8 @@ public class BillController {
     @GetMapping("/bills/{billId}")
     public ResponseEntity<ResponseStructure<BillResponse>> findByBillId(@PathVariable long billId){
         BillResponse billResponse = billService.findById(billId);
-        return ResponseBuilder.ok("Bill Found !!" , billResponse);
+        return ResponseBuilder.ok("Bill Found !!" ,billResponse);
     }
 
-    @GetMapping("/bills/pdf/{billId}")
-    public ResponseEntity<ResponseStructure<Byte[]>> findBillById(@PathVariable long billId){
-        BillResponse billResponse = billService.findById(billId);
-        ResponseBuilder.ok("Bill Found !!" , billResponse);
-        return null;
-    }
+
 }
