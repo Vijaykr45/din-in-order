@@ -1,0 +1,35 @@
+[33m622b95b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mbill[m[33m)[m HEAD@{0}: commit: Updated files before switching to dev
+[33m06e0675[m[33m ([m[1;31morigin/fooditem[m[33m, [m[1;31morigin/cartItem[m[33m, [m[1;31morigin/bill[m[33m, [m[1;31morigin/Restaurant[m[33m, [m[1;31morigin/QrGenerate[m[33m, [m[1;32mfooditem[m[33m, [m[1;32mcartItem[m[33m, [m[1;32mRestaurant[m[33m, [m[1;32mQrGenerate[m[33m)[m HEAD@{1}: checkout: moving from bill to bill
+[33m06e0675[m[33m ([m[1;31morigin/fooditem[m[33m, [m[1;31morigin/cartItem[m[33m, [m[1;31morigin/bill[m[33m, [m[1;31morigin/Restaurant[m[33m, [m[1;31morigin/QrGenerate[m[33m, [m[1;32mfooditem[m[33m, [m[1;32mcartItem[m[33m, [m[1;32mRestaurant[m[33m, [m[1;32mQrGenerate[m[33m)[m HEAD@{2}: checkout: moving from QrGenerate to bill
+[33m06e0675[m[33m ([m[1;31morigin/fooditem[m[33m, [m[1;31morigin/cartItem[m[33m, [m[1;31morigin/bill[m[33m, [m[1;31morigin/Restaurant[m[33m, [m[1;31morigin/QrGenerate[m[33m, [m[1;32mfooditem[m[33m, [m[1;32mcartItem[m[33m, [m[1;32mRestaurant[m[33m, [m[1;32mQrGenerate[m[33m)[m HEAD@{3}: checkout: moving from cartItem to QrGenerate
+[33m06e0675[m[33m ([m[1;31morigin/fooditem[m[33m, [m[1;31morigin/cartItem[m[33m, [m[1;31morigin/bill[m[33m, [m[1;31morigin/Restaurant[m[33m, [m[1;31morigin/QrGenerate[m[33m, [m[1;32mfooditem[m[33m, [m[1;32mcartItem[m[33m, [m[1;32mRestaurant[m[33m, [m[1;32mQrGenerate[m[33m)[m HEAD@{4}: checkout: moving from fooditem to cartItem
+[33m06e0675[m[33m ([m[1;31morigin/fooditem[m[33m, [m[1;31morigin/cartItem[m[33m, [m[1;31morigin/bill[m[33m, [m[1;31morigin/Restaurant[m[33m, [m[1;31morigin/QrGenerate[m[33m, [m[1;32mfooditem[m[33m, [m[1;32mcartItem[m[33m, [m[1;32mRestaurant[m[33m, [m[1;32mQrGenerate[m[33m)[m HEAD@{5}: reset: moving to 06e0675bbbe4fe826e872da892421e4cced89f0e
+[33m06e0675[m[33m ([m[1;31morigin/fooditem[m[33m, [m[1;31morigin/cartItem[m[33m, [m[1;31morigin/bill[m[33m, [m[1;31morigin/Restaurant[m[33m, [m[1;31morigin/QrGenerate[m[33m, [m[1;32mfooditem[m[33m, [m[1;32mcartItem[m[33m, [m[1;32mRestaurant[m[33m, [m[1;32mQrGenerate[m[33m)[m HEAD@{6}: checkout: moving from fooditem to fooditem
+[33m06e0675[m[33m ([m[1;31morigin/fooditem[m[33m, [m[1;31morigin/cartItem[m[33m, [m[1;31morigin/bill[m[33m, [m[1;31morigin/Restaurant[m[33m, [m[1;31morigin/QrGenerate[m[33m, [m[1;32mfooditem[m[33m, [m[1;32mcartItem[m[33m, [m[1;32mRestaurant[m[33m, [m[1;32mQrGenerate[m[33m)[m HEAD@{7}: checkout: moving from Restaurant to fooditem
+[33m06e0675[m[33m ([m[1;31morigin/fooditem[m[33m, [m[1;31morigin/cartItem[m[33m, [m[1;31morigin/bill[m[33m, [m[1;31morigin/Restaurant[m[33m, [m[1;31morigin/QrGenerate[m[33m, [m[1;32mfooditem[m[33m, [m[1;32mcartItem[m[33m, [m[1;32mRestaurant[m[33m, [m[1;32mQrGenerate[m[33m)[m HEAD@{8}: commit: Food item added , Restaurant table added
+[33ma0748b9[m HEAD@{9}: commit: Restaurant controller added , RestaurantServiceImpl added , ResponseBuilder Updated
+[33m6138252[m HEAD@{10}: commit: useer validation added , Cusine type added , Restaurant entity added
+[33m42dfa46[m HEAD@{11}: commit: Removed .env from Git tracking
+[33meceb5b0[m[33m ([m[1;32muser/Validation[m[33m, [m[1;32muser/Registration[m[33m)[m HEAD@{12}: checkout: moving from user/Validation to Restaurant
+[33meceb5b0[m[33m ([m[1;32muser/Validation[m[33m, [m[1;32muser/Registration[m[33m)[m HEAD@{13}: checkout: moving from user/Registration to user/Validation
+[33meceb5b0[m[33m ([m[1;32muser/Validation[m[33m, [m[1;32muser/Registration[m[33m)[m HEAD@{14}: checkout: moving from user/Validation to user/Registration
+[33meceb5b0[m[33m ([m[1;32muser/Validation[m[33m, [m[1;32muser/Registration[m[33m)[m HEAD@{15}: checkout: moving from user/Registration to user/Validation
+[33meceb5b0[m[33m ([m[1;32muser/Validation[m[33m, [m[1;32muser/Registration[m[33m)[m HEAD@{16}: commit: RestaurantResponse field added , RestaurantRequest field added
+[33m25ddbd3[m HEAD@{17}: commit: Cuisinr type updated , Restaurant updated
+[33m2edd8f2[m HEAD@{18}: commit: Restaurant Entity , Cuisine type Entity added
+[33m930b7fc[m HEAD@{19}: commit: adding Restaurant Entity
+[33m10389cc[m HEAD@{20}: commit: documentation feature added
+[33mbf1fe30[m[33m ([m[1;31morigin/user/Registration[m[33m)[m HEAD@{21}: checkout: moving from user/Registration to user/Registration
+[33mbf1fe30[m[33m ([m[1;31morigin/user/Registration[m[33m)[m HEAD@{22}: reset: moving to HEAD
+[33mbf1fe30[m[33m ([m[1;31morigin/user/Registration[m[33m)[m HEAD@{23}: commit: updating user controller baseUrl , updating Application.yml to secure id , password
+[33m04ad975[m HEAD@{24}: commit: adding user registration feature , findUserById and updateUserById feature
+[33md749c58[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mdev[m[33m)[m HEAD@{25}: checkout: moving from dev to user/Registration
+[33md749c58[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mdev[m[33m)[m HEAD@{26}: checkout: moving from config to dev
+[33m39420a1[m[33m ([m[1;31morigin/config[m[33m)[m HEAD@{27}: checkout: moving from dev to config
+[33md749c58[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mdev[m[33m)[m HEAD@{28}: checkout: moving from config to dev
+[33m39420a1[m[33m ([m[1;31morigin/config[m[33m)[m HEAD@{29}: commit: Resolving issue
+[33mad2ae7f[m HEAD@{30}: commit: config add application.yml file
+[33m25aaab5[m HEAD@{31}: commit: config add application.properties file
+[33md749c58[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mdev[m[33m)[m HEAD@{32}: checkout: moving from dev to config
+[33md749c58[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mdev[m[33m)[m HEAD@{33}: checkout: moving from master to dev
+[33md749c58[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mdev[m[33m)[m HEAD@{34}: commit (initial): initialize
